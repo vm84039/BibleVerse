@@ -1,0 +1,56 @@
+﻿@model BibleVerse.Models.BibleModel
+<!DOCTYPE html>
+<html>
+<body>
+    @using (Html.BeginForm("EnterScripture", "Home", FormMethod.Post))
+    {
+    <table>
+        <tr>
+            <th colspan="2" align="center">Enter a Bible Verse.</th>
+        </tr>
+        <tr>
+            <td>Old or New Testament </td>
+            <td>
+                @Html.DropDownListFor(m => m.Testament, new List<SelectListItem>
+               { new SelectListItem{Text="Old", Value="Old"},
+                 new SelectListItem{Text="New", Value="New"}}, "Please select")
+                @Html.ValidationMessageFor(m => m.Testament, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>Book: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Book)
+                @Html.ValidationMessageFor(m => m.Book, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+
+        <tr>
+            <td>Chapter: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Chapter)
+                @Html.ValidationMessageFor(m => m.Chapter, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>Verse: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Verse)
+                @Html.ValidationMessageFor(m => m.Verse, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>Verse Text </td>
+            <td>
+                @Html.TextBoxFor(m => m.Text)
+                @Html.ValidationMessageFor(m => m.Text, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Enter Verse"/></td>
+        </tr>
+    </table>
+    }
+</body>
+</html>

@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{461A9FC2-B559-46C7-B03D-A62D8F483400}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibleVerse</RootNamespace>
+    <AssemblyName>BibleVerse</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44367</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.4\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BibleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BibleDatabase.cs" />
+    <Compile Include="Services\Utility\Ilogger.cs" />
+    <Compile Include="Services\Utility\MyLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Bible.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Music\4K Blue Skies Flight 🌞 Sunny Clouds 🌞 Moving Background #AAvfx Sky Live Wallpaper.mp4" />
+    <Content Include="Content\Music\AlbumArtSmall.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-2252-88217BE9F700}_Large.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-2252-88217BE9F700}_Small.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-70E5-EE384ED2B600}_Large.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-70E5-EE384ED2B600}_Small.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-806B-AE29F6085A00}_Large.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-806B-AE29F6085A00}_Small.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-DEF5-A73DB0021C00}_Large.jpg" />
+    <Content Include="Content\Music\AlbumArt_{B5020207-474E-4720-DEF5-A73DB0021C00}_Small.jpg" />
+    <Content Include="Content\Music\Audio  He That Believeth The Chicago Mass Choir.mp3" />
+    <Content Include="Content\Music\Awesome Instrumental - Copy.mp4" />
+    <Content Include="Content\Music\Awesome Instrumental.m4a" />
+    <Content Include="Content\Music\Awesome Instrumental.mp4" />
+    <Content Include="Content\Music\background-white.PNG" />
+    <Content Include="Content\Music\background.PNG" />
+    <Content Include="Content\Music\Chasing after you Instrumental.mp3" />
+    <Content Include="Content\Music\Clouds Loop Moving Background Animation Video Effects.mp4" />
+    <Content Include="Content\Music\Folder.jpg" />
+    <Content Include="Content\Music\Lord I lift Your Name on High Instrumental Praise and Worship Video w  Lyrics.m4a" />
+    <Content Include="Content\Music\Lord I lift Your Name on High Instrumental Praise and Worship Video w  Lyrics.mp3" />
+    <Content Include="Content\Music\Lord I lift Your Name on High Instrumental Praise and Worship Video w  Lyrics.mp4" />
+    <Content Include="Content\Music\Lord You%27re Mighty instrumental.mp3" />
+    <Content Include="Content\Music\Made A Way - Travis Greene %28Lyrics%29 - Copy.mp4" />
+    <Content Include="Content\Music\Made A Way - Travis Greene %28Lyrics%29.mp4" />
+    <Content Include="Content\Music\Made A Way Backing Track.mp3" />
+    <Content Include="Content\Music\Made A Way Backing Track.mp4" />
+    <Content Include="Content\Music\Made A Way Travis Greene Instrumental - Copy.mp3" />
+    <Content Include="Content\Music\Made A Way Travis Greene Instrumental.mp3" />
+    <Content Include="Content\Music\Made A Way Travis Greene Instrumental.mp4" />
+    <Content Include="Content\Music\More Than Anything %28Short Version%29-- Instrumental w Lyrics.mp3" />
+    <Content Include="Content\Music\More Than Anything Intro Pic.PNG" />
+    <Content Include="Content\Music\Motion Background for worship.mp4" />
+    <Content Include="Content\Music\oh how precious.mp3" />
+    <Content Include="Content\Music\Old School Medley - with Lyrics.m4a" />
+    <Content Include="Content\Music\Old School Medley - with Lyrics.mp4" />
+    <Content Include="Content\Music\Praise Him In Advance - Marvin Sapp.mp3" />
+    <Content Include="Content\Music\Praise Him In Advance - Marvin Sapp.mp4" />
+    <Content Include="Content\Music\Stand %28Karaoke with Background Vocals%29 %28In the Style of Donnie McClurkin%29.mp3" />
+    <Content Include="Content\Music\When the Spirit of the Lord - Fred Hammond - Copy.mp4" />
+    <Content Include="Content\Music\When the Spirit of the Lord - Fred Hammond.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Music\desktop.ini" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\00\06\05\279BFD0729F7EEAB-3889AE3A27CF6560.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\00\10\14\279BFD0729F7EEAB-29790BCEA7ED8EA0.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\01\03\02\279BFD0729F7EEAB-A265519A75745231.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\01\04\02\279BFD0729F7EEAB-55FFF0784EC23241.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\01\09\13\279BFD0729F7EEAB-D451EE4D8186CD91.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\01\10\01\279BFD0729F7EEAB-9FED4CCF805691A1.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\01\13\07\279BFD0729F7EEAB-78DCFE6B4BE617D1.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\02\07\00\279BFD0729F7EEAB-3FB4615E39020072.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\02\10\07\279BFD0729F7EEAB-73E2484CF30187A2.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\02\10\15\279BFD0729F7EEAB-BD9379AE7919DFA2.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\03\01\00\279BFD0729F7EEAB-641AF19BADA48013.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\03\02\10\279BFD0729F7EEAB-1BA64C1F86F54A23.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\03\04\05\279BFD0729F7EEAB-D433B77072FAD543.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\03\05\11\279BFD0729F7EEAB-616C5360C0D08B53.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\04\04\05\279BFD0729F7EEAB-0DA83E919E9C2544.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\04\04\14\279BFD0729F7EEAB-ABFDBB7933F8CE44.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\05\00\09\279BFD0729F7EEAB-FAEB722A57A6A905.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\05\01\10\279BFD0729F7EEAB-BC5A74A0A99D2A15.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\05\07\15\279BFD0729F7EEAB-DBDC7F1842CCBF75.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\05\15\02\279BFD0729F7EEAB-0C7B6EFBC71BA2F5.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\06\00\10\279BFD0729F7EEAB-DD93F245FBE90A06.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\06\01\13\279BFD0729F7EEAB-48CC247955D97D16.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\06\04\12\279BFD0729F7EEAB-AF3041A271C15C46.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\06\06\14\279BFD0729F7EEAB-0CEE1C9B3C54BE66.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\07\01\04\279BFD0729F7EEAB-C78018EACCBB3417.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\08\02\14\279BFD0729F7EEAB-963E8904010F8E28.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\08\10\06\279BFD0729F7EEAB-33A9B2F4A63FA6A8.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\08\12\07\279BFD0729F7EEAB-D73D4C8AA03A37C8.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\08\15\02\279BFD0729F7EEAB-91121B7DE2B022F8.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\00\04\279BFD0729F7EEAB-06A6C17FE71F1409.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\00\05\279BFD0729F7EEAB-DA48E1EFE8879509.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\00\12\279BFD0729F7EEAB-A8FFBE77A1E8CC09.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\02\07\279BFD0729F7EEAB-5C084734E4084729.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\05\02\279BFD0729F7EEAB-8CD9ABCBE43D2259.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\09\07\14\279BFD0729F7EEAB-B339EE873857EE79.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\10\06\01\279BFD0729F7EEAB-094985E62981D16A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\10\09\10\279BFD0729F7EEAB-36C75F7CCE461A9A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\10\13\14\279BFD0729F7EEAB-E76FBF5B9F3A2EDA.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\11\02\01\279BFD0729F7EEAB-917D01771836212B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\11\02\14\279BFD0729F7EEAB-D4DD16194A113E2B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\11\04\13\279BFD0729F7EEAB-3B7DDE753C2CAD4B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\11\13\05\279BFD0729F7EEAB-F03EBC7DCFFFC5DB.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\12\08\07\279BFD0729F7EEAB-96B44F948F74078C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\12\10\11\279BFD0729F7EEAB-66C0846CE1431BAC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\12\13\01\279BFD0729F7EEAB-060985F4C171B1DC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\12\14\05\279BFD0729F7EEAB-0EB2C38E49A275EC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\12\14\13\279BFD0729F7EEAB-6333DB0B33177DEC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\13\05\11\279BFD0729F7EEAB-049AB99B0432FB5D.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\13\13\01\279BFD0729F7EEAB-1D70B54706BF91DD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\13\13\11\279BFD0729F7EEAB-751F670D59859BDD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\14\00\02\279BFD0729F7EEAB-3D4B6C8DC695B20E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\14\05\15\279BFD0729F7EEAB-E4E633CA5B7AFF5E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\14\09\09\279BFD0729F7EEAB-5BAC365DA78DF99E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\14\12\11\279BFD0729F7EEAB-5E3011882AE0EBCE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\01\12\279BFD0729F7EEAB-955716333722EC1F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\02\01\279BFD0729F7EEAB-4C413D9833CDA12F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\03\15\279BFD0729F7EEAB-BDC0151E63168F3F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\06\05\279BFD0729F7EEAB-8B6E7F75200C656F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\10\11\279BFD0729F7EEAB-29841A8B57605BAF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\11\10\279BFD0729F7EEAB-81348653662D2ABF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\12\01\279BFD0729F7EEAB-A508E1E3555451CF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cache\279BFD0729F7EEAB\15\12\07\279BFD0729F7EEAB-18047648597797CF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud Purchases\279BFD0729F7EEAB\06\03\06\06942F173AEE45A636-7F8B6EECF3B24CED.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\00\00\0071CB839198F1F000-02871C44E524E233.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\01\02\02B60E7E9252E6E210-9D4F49AC42176E27.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\03\05\058C9E8247D98B6530-E819FB7A937C28F1.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\04\08\089A6BF3BD26009840-FE51FEBCBCE0E8A6.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\05\06\06CABBEA40D98FF650-CD31ECC2F53E9D91.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\06\02\023EB81FE7A07DA260-64D4F051FA4A014A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\07\11\117D2A3937A0B00B70-A3DF7BF7E8AB0186.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\09\02\0205EAA333AD29E290-C4C5EE01DCFD863A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\11\01\01103ECD7271A141B0-93F620FD2BE5F5DC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\12\11\11CBB42F012EFBFBC0-DB9599A22779210B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\13\08\08008CCE2EA381F8D0-591A38419F9BC21D.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\15\05\054D0D6BC56E92C5F0-D7F3C248A1FDABEC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\00\15\11\115702ACA11CBA9BF0-7E4CED2618B9879A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\01\15\1502F12D2D4A66DF11-3F486DCB6ACFA3F9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\06\07\0731A393FB087FF761-BC000F12B52CAA11.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\08\06\06F1B43C01B3934681-C6F6A18B90AC6FED.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\08\07\07C924C20A3D946781-7F63041BB96F041E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\09\08\088EF04AD8ED8F2891-C6E410747475F8C9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\01\12\08\087B2ED63F250C68C1-6928151798FF7719.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\00\03\0302AAFF0C9947E302-E76A9E546A17DEFD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\00\11\11E976ECCB4E692B02-D547EDBD6246EDC7.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\01\09\0904BEF0C5529A8912-F3A205A384A2CFED.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\02\01\01718B589F6AA2A122-6052CFA1F3D39352.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\02\13\13755CE1EE0F7F5D22-92D517B91CFFF385.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\03\09\09F0441E64D0EAE932-5EB797E85B273C04.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\08\10\10A13C8BF590FFFA82-1C613732FB9EF161.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\09\08\08727C59C40D4B6892-06D1F5B00C223C78.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\09\09\09A767CF5F8319B992-876186D9EAFA7EC4.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\02\13\14\149FBE645832C9BED2-4E76B7B0BBE5AFB9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\00\07\075C9AB809F31E0703-6D0D4189C630223F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\04\06\06D2BF586278C33643-7E7DE5CB0CADF91C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\06\11\112439D16423CAAB63-5890C2D00A06705C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\07\13\139D01962413B84D73-9B69F3246A4455FA.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\10\12\127B6B0E714053ACA3-8146257DF3FB822F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\11\00\004D549237199740B3-32EBE22F202459AE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\11\09\0977A7DEA7D02549B3-6C2ED5D0334A8BDB.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\14\00\0078D108D202BBB0E3-EF66D8950291E74B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\03\15\10\108A75A77C65E0EAF3-7C2AFE65E5EA05AA.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\02\10\101E8C6A63431B7A24-83A451C9B6B21890.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\03\06\0612C70AB28A61E634-CC34D5D2A9B75F41.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\06\09\09F64AD626DB301964-A2B41A1BCC161B90.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\10\00\00C268BE2EE84B10A4-2BC41131BB023066.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\12\10\10D9CA326F3E99EAC4-768C3730387029F2.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\13\02\02030369667822D2D4-458831C353244736.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\04\15\15\157160C01FFC874FF4-A1B9515C0C8EB1C8.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\00\06\0653E06832C17A6605-A432F61120C497AB.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\01\12\1250CE139976C15C15-E73A9F13B9EA83FD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\02\09\099C718F54EB044925-7BDFE740E3F8E62C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\03\04\04F4D19D3462F0F435-9E3BBCC9A647980A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\03\12\1206B5AD0AC98D8C35-9EEBA4CA04C92BDC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\05\09\0903D3359E5DD29955-14C7B26150BE4744.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\05\11\11A14546398340AB55-660812B8C25E7928.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\07\06\06B46CB856CFA75675-BB83B64BA2843B30.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\09\01\01EA167BCB207A5195-BC1E0ED34C3CC7F6.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\09\11\11BA3F06354E351B95-D5803FC923025560.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\11\08\0877D8889CBB8B78B5-722EF907860F28FB.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\05\14\06\06D03F0B45638CF6E5-2FD1708CF8E27208.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\01\06\06BAF8DE4143636616-D2790B5A9B5B09E7.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\03\04\0456909A21615B7436-A8E5FCA59EFC5B03.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\05\15\15F381186295104F56-DB7273A172D97C2B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\06\15\15EDEA2B103388DF66-CC3FC4CD0CCD2B23.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\07\09\0905B1770A53AC8976-3FCBFB8050868EEC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\08\05\05B69EDD1434528586-005E7E981B04B872.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\10\13\13EB93EC9B9D072DA6-90DA31B7B9C18DD9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\11\01\01FF3F2090CEEF71B6-32C1E51E09CC9A59.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\14\03\03B17EE108442653E6-B021CE47FDF27EDC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\06\15\08\085CE3824CAB0488F6-597B1287FAF2C653.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\02\03\037EB6BEA01AF0F327-59627ED136183B51.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\02\13\13EBA9C63E0D190D27-91E453941D111373.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\03\15\15EC44ED18C986FF37-07EFE72E88970B58.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\06\07\07E8B8575A1E44F767-12BA8B858EA36C80.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\10\08\08B0EBC0D931A8C8A7-688B32A3D6E5EAFD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\11\13\13DD9CDFF28E9F7DB7-3A1FB4C95A913DCE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\07\12\10\109353ED0B92615AC7-281AF8BA8AF02868.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\00\09\094270229F15DDF908-CB5220734CDCBCE7.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\02\15\15E55FF3A9D0458F28-991C956E19A3E800.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\09\09\09532D201D76C3C998-F5F38C2492662655.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\11\07\07BEEF8193CB5F57B8-6D8399E0F413FD55.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\12\04\04AE0B0866785D14C8-B9F90D5CB29ADA6A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\12\13\13B4B98279C660DDC8-8123C5B5A22920B3.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\13\07\0738EA0FB42E5837D8-3963A798D7E5A6DC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\13\09\095ED4A6B1446F19D8-455C5ABAB6977590.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\14\09\09B6331C5B8EE819E8-77C8CB80EF6570B5.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\03\04\042797DDAFE7B89439-12CE171EFB469D85.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\03\09\0904C02995E665E939-427B59680D3574B3.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\04\06\065ECD36920B314649-FAB8499754341A7A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\06\04\047BED6D2E340BC469-382B6DD0ED0BB724.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\08\00\001A24A6C76ED60089-C530D7F2D8016958.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\08\04\043730EF6E77368489-7AAA75BE01A0BBA9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\10\04\04DB5E7716637994A9-28E5D814A544434A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\10\11\113B731260C587DBA9-F9F683F71C614CAF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\11\07\07529B9EFE346FE7B9-A7524F93D10F9FCA.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\14\11\112FE2545A62D0CBE9-EFA44C096153706C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\09\15\15\152127EBF8FA7E4FF9-C61BD08B4A2B3CE4.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\02\13\13019AB76BA851CD2A-51A188F139DC9584.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\03\05\05C9392B9361D7153A-FF1A8D814C8B02BC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\12\05\05A0C8F9388A5565CA-6CC089C75FFF92BB.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\13\14\1491E1920CB1F0FEDA-06E943E149251D4D.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\14\07\0791A1C222E6CA97EA-C7F3B9C67A8870F5.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\10\15\01\018DCF65A4588AA1FA-1FA87E77CA36368A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\00\02\02F37E6BBA42EE020B-9D91785AE762C629.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\11\11\11C676C2B9B0477BBB-3A2AE6DE3BB5C231.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\12\12\12DDAD454D620D3CCB-134D5F9D001BB206.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\14\07\07275057B09CE1B7EB-46001BD48491EB31.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\14\14\14D35E292CE227FEEB-9554A5C828070E43.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\14\15\1511E92F9B0758BFEB-0A515CBA00A64757.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\11\15\00\00D88AC60C4E2590FB-1E02DDE54B303D05.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\03\13\137A98456EF0466D3C-3EC3539B10BDC261.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\04\11\116041BC6C83D6AB4C-518FF6BBD195BB2B.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\04\12\12938C7F76E110FC4C-C94EE70163CC9655.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\09\10\10F4928EED7AB3AA9C-E0CA77898C7DAB65.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\09\13\138358280C1B650D9C-ACF3C6F2066DE8CA.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\09\15\15C0502A5CB3A52F9C-B92F5EFB354903B0.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\12\10\103828A576F85A1ACC-AFC50D969507AECD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\13\03\03773097E02A90B3DC-D084B5DD2EE85196.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\12\13\11\110D015C77B654ABDC-85E810D85B5C94D6.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\13\01\05\056CA8AF178947C51D-68C9FF642CB61EC9.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\13\05\03\038DE302A4E2DE435D-291BD0592519D643.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\13\06\15\153488E046BAA17F6D-EF80A3271D43C2DE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\13\07\02\027044F65AB6D6C27D-05F28400A7A80AA1.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\13\09\13\133C4CEAB2AD892D9D-5F4CB7929FE1E315.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\00\13\13260FDC98542F4D0E-532CE3B2333990FE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\00\15\15F3221BF442B9EF0E-AE40079081F8F3DF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\02\00\00127B9976A891A02E-47AF874A6495AD21.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\04\10\105AF1967507E69A4E-D4BB69C3BC757358.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\06\00\0033821B18E86FA06E-D1F4B5D81906726D.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\06\09\092321A2D4397A696E-2003E2AF5A51DCFC.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\08\05\055806F2A22007E58E-5218FF7974A78B6E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\12\04\045FB3F1DE00B604CE-944BD84664BAA176.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\12\08\081C5E3BF46C5168CE-EA5ECCD010E0E51E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\12\09\093419A5ABEFD779CE-D3F2C0779925489E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\00\00\006EBB89B55D75800F-50FEA7060F2ED1EF.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\00\07\07CDF68941CBCA470F-B643FC463CE8DA5F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\00\12\120B6F1B4F2C8D1C0F-81CDB55C6EEFE9CD.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\02\06\068B0252E5CC8E962F-81F0CB82CF30CD5C.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\02\10\1096184F1B9933DA2F-B1FECC4D9ECF0BE6.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\03\06\0668B423D38D9E963F-FEFBCF9947F3C26F.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\06\01\0195D0B32F924D816F-6ADED360E698088E.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\10\00\000C9B678EF985B0AF-59390AAF5AE70646.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\11\14\14567FF912B62FEEBF-786CC3118A17672A.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\13\01\015A8D63CB60E611DF-83E264B9A1B08DC7.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\15\14\07\07002BC93A26FD17EF-0B665556F6389369.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Custom\279BFD0729F7EEAB\08\03\15\279BFD0729F7EEAB-90E30EDD2C555F38.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Custom\279BFD0729F7EEAB\08\07\11\279BFD0729F7EEAB-489408CE4C87FB78.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Generated\279BFD0729F7EEAB\14\10\08\279BFD0729F7EEAB-D1F4CC6CF65598AE.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Store\51\53\55\15204357.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Store\51\55\48\86375370.itc2" />
+    <Content Include="Content\Music\iTunes\Album Artwork\Store\55\50\53\544113725.itc2" />
+    <Content Include="Content\Music\iTunes\iTunes Library Extras.itdb" />
+    <Content Include="Content\Music\iTunes\iTunes Library Genius.itdb" />
+    <Content Include="Content\Music\iTunes\iTunes Library.itl" />
+    <Content Include="Content\Music\iTunes\iTunes Media\.iTunes Preferences.plist" />
+    <Content Include="Content\Music\iTunes\sentinel" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\BibleForm.cshtml" />
+    <Content Include="Views\Home\FindVerse.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Home\Found.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\08\06\05\" />
+    <Folder Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\03\02\" />
+    <Folder Include="Content\Music\iTunes\Album Artwork\Cloud\279BFD0729F7EEAB\14\03\07\" />
+    <Folder Include="Content\Music\iTunes\Album Artwork\Download\" />
+    <Folder Include="Content\Music\iTunes\iTunes Media\Automatically Add to iTunes\" />
+    <Folder Include="Content\Music\iTunes\iTunes Media\Downloads\" />
+    <Folder Include="Images\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61855</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44367/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
